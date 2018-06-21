@@ -1,0 +1,45 @@
+	<style rel="stylesheet">
+						   .button-search{
+							   background: transparent;
+							   border: none;
+							   position: absolute;
+							   top: 16px;
+							   right: 15px;
+							   color: #848484;
+							   cursor: pointer;
+						   }
+</style>
+
+<br>
+<div class="col-lg-4 blog-sidebar sidebar">
+	<form n:if="$presenter->isLinkCurrent(':Front:News:list')" n:name=searchBar class="form_search">
+		<input n:name=searchKey class="form-control mr-sm-2" type="text" placeholder="Search...">
+		<button n:name=search class="button-search" ><i class="fa fa-search" style="margin-right:10px;"></i></button>
+	</form>
+
+
+	<h4></h4>
+	{ifset $sideList}
+	{foreach $sideList as $post}
+	<div class="media-box">
+		<div class="media-icon">
+			<img src="{$basePath}/images/posts/title/{$post->title_img}" alt="img" class="img-full">
+		</div>
+		<div class="media-content">
+			<h6><a n:href=":Front:News:detail $post->id">{$post->title}</a></h6>
+
+		</div>
+	</div>
+	{/foreach}
+	{/ifset}
+<!--
+	<h4>Popular Tags</h4>
+	<div class="tags">
+		<button class="btn no-bg btn-secondary-outlined btn-mid">Financial solve</button>
+		<button class="btn no-bg btn-secondary-outlined btn-mid">Insurance</button>
+		<button class="btn no-bg btn-secondary-outlined btn-mid">Agent</button>
+		<button class="btn no-bg btn-secondary-outlined btn-mid">Investment</button>
+		<button class="btn no-bg btn-secondary-outlined btn-mid">Business</button>
+	</div>
+	-->
+</div>

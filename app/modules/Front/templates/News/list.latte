@@ -1,0 +1,76 @@
+{block head}
+
+{/block}
+{block footer}{/block}
+{block content}
+
+
+		<h1>News</h1>
+	</div>
+	<div class="">
+		<ul class="pager middle">
+			<li>Home</li>
+			<li><a href="javascript:void(0)">News</a></li>
+		</ul>
+	</div>
+</section>
+<div class="alert alert-danger" n:foreach="$flashes as $flash" class="flash {$flash->type}">{$flash->message}</div>
+
+
+<!-- BLOG RIGHT SIDEBAR -->
+<section class="blog-grid">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8">
+				<!-- blog single column starts -->
+				<div class="row">
+					{if $articles->fetchAll() == NULL}
+					<div class="col-md-12">
+						<h3 style="text-align: center;">WE ARE SORRY, NO ARTICLES WAS FOUND</h3>
+					</div>
+			{else}
+
+					{foreach $articles as $article}
+
+						<div class="col-md-12">
+							<div class="card card-style2">
+								<div class="card_img">
+
+									<a n:href = ":Front:News:detail $article->id"> <img class="img-full" style="width:610px;height: 355px;"
+																						src="{$basePath}/images/posts/title/{$article->title_img}"
+
+																						alt="blog image"></a>
+								</div>
+								<div class="card-block">
+
+									<a n:href = ":Front:News:detail $article->id"><h4
+												class="card-title">{$article->title}</h4></a>
+									<p style="color:#848484;" >
+										{$article->description}
+									</p>
+									<a n:href=":Front:News:detail $article->id"
+											class="btn btn-secondary btn-default">Read More</a>
+								</div>
+							</div>
+
+						</div>
+					{/foreach}
+{/if}
+				</div>
+				<!-- blog single column ends -->
+			</div>
+			{include "sideBars.latte"}
+		</div>
+	</div>
+	{control visualPaginator}
+</section>
+
+
+
+
+
+
+
+
+
+

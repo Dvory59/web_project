@@ -1,0 +1,41 @@
+{block head}{/block}
+{block footer}{/block}
+{block content}
+
+			<h1>{$article->title}</h1>
+		</div>
+		<div class="">
+			<ul class="pager middle">
+				<li>About</li>
+				<li><a href="javascript:void(0)">{$article->title}</a></li>
+			</ul>
+		</div>
+	</section>
+	<section class="service_single-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-9 col-md-8">
+					<div class="service_single-details" style="padding:0;">
+
+						<div class="service_details-desc">
+							<h2>{$article->title}</h2>
+							<p style="color:#848484;">{$article->description}</p>
+							<hr>
+							<p>{$article->text|noescape}</p>
+
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 sidebar">
+					<ul class="list-group">
+						<li n:class ="list-group-item, $article->type == 'smart_city' ? active"><a n:href =":Front:About:subject 'smart_city'">Smart City</a></li>
+						<li n:class ="list-group-item, $article->type == 'smart_grid' ? active"><a n:href =":Front:About:subject 'smart_grid'">Smart Grid</a></li>
+						<li n:class ="list-group-item, $article->type == 'industry' ? active"><a n:href =":Front:About:subject 'industry'">Industry 4.0</a></li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+{/block}

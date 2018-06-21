@@ -1,0 +1,25 @@
+{extends @signLayout.latte}
+
+{block content}
+
+	<div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-offset-5 col-md-3">
+					<form class="form-login" n:name=signInForm>
+						<h4 style="text-align: center;" n:block=title>Log in</h4>
+						<input style="margin-bottom: 5px;" n:name=login class="form-control input-sm chat-input" placeholder="login"/>
+
+						<input n:name=password id="userPassword" class="form-control input-sm chat-input"
+											   placeholder="password"/>
+						<br>
+						<input n:name=send class="btn btn-primary btn-md">
+					</form>
+					<div class="errors" n:if="$form->hasErrors()">
+						<p n:foreach="$form->errors as $error">{$error}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{/block}

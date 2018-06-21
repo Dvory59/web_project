@@ -1,0 +1,543 @@
+{block head}<link rel="stylesheet" href="{$basePath}/frontend/css/defaultPage.css"> {/block}
+{block footer}{/block}
+{block content}
+<div class="main-wrapper home">
+	<!-- BANNER SLIDER CAROUSEL -->
+	<section class="banner">
+		<div id="banner-slider" class="element_row">
+			<!-- slider one -->
+
+			{foreach $sliderArticles as $article}
+
+			<div class="item ">
+				<div class="bg-image-holder" style="background-image: url('{$basePath}/images/posts/title/{$article->title_img}');">
+					<div class="slider-caption container">
+						<div class="caption-content">
+							<h1 class="bold text-white" data-animation="customFadeInUp" data-delay="0.1s">{$article->title}</h1>
+							<p class="text-white" data-animation="customFadeInUp" data-delay="0.4s">{$article->description|truncate:50}</p>
+							<a  class="bold text-white" n:href=":Front:News:detail $article->id"><span  data-delay="0.4s">See Detail</span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{/foreach}
+
+		</div>
+	</section>
+</div>
+
+<!-- WHY CHOOSE US -->
+<section class="more-feature">
+	<div class="container">
+		<div class="row">
+			<div style = "margin:auto;" class="col-md-12">
+				<div class="more-feature-left">
+
+					<div n:if="$about!=NULL" class="sectionTitle">
+						<h2><a n:href =":Front:About:about" >{$about->title}</a></h2>
+						<p style="color:#848484;" >{$about->description|noescape}</p>
+					</div>
+					<div class="more-features">
+						<div class="feature-icon">
+							<i class="fa fa-building fa-lg" aria-hidden="true"></i>
+						</div>
+						<div n:if="$sm_city!=NULL" class="feature-details">
+							<h4><a n:href =":Front:About:subject 'smart_city'" >{$sm_city->title}</a></h4>
+							<p style="color:#848484;" >{$sm_city->description|noescape}</p>
+						</div>
+					</div>
+					<div class="more-features">
+						<div class="feature-icon">
+							<i class="fa fa-industry" aria-hidden="true"></i>
+						</div>
+						<div n:if="$sm_grid!=NULL" class="feature-details">
+							<h4><a n:href =":Front:About:subject 'smart_grid'" >{$sm_grid->title}</a></h4>
+							<p style="color:#848484;" >{$sm_grid->description|noescape}</p>
+						</div>
+					</div>
+					<div class="more-features">
+						<div class="feature-icon">
+							<i class="fa fa-cogs" aria-hidden="true"></i>
+						</div>
+						<div n:if="$industry!=NULL" class="feature-details">
+							<h4><a n:href =":Front:About:subject 'industry'" >{$industry->title}</a></h4>
+							<p style="color:#848484;" >{$industry->description|noescape}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--<div class="col-md-6">
+				<div class="data-chart">
+					<canvas id="myChart"></canvas>
+					<p style="text-align:center;">Financial statistics of the research group.</p>
+				</div>
+			</div>
+			-->
+		</div>
+	</div>
+</section>
+
+<section class="countup-section bg-image" style="background-image: url('{$basePath}/images/VUT.jpg'); background-attachment: fixed;">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-3 col-6">
+				<div class="text-center single_block">
+					<div class="counter">{$publications}</div><span class="count"></span>
+					<h5>Publications</h5>
+				</div>
+			</div>
+			<div class="col-sm-3 col-6">
+				<div class="text-center single_block">
+
+					<div class="counter">{$projects}</div><span class="count"></span>
+					<h5>Projects</h5>
+				</div>
+			</div>
+			<div class="col-sm-3 col-6">
+				<div class="text-center single_block">
+
+					<div class="counter">{$results}</div><span class="count"></span>
+					<h5>Results</h5>
+				</div>
+			</div>
+			<div class="col-sm-3 col-6">
+				<div class="text-center single_block">
+
+					<div class="counter">{$membersCount}</div><span class="count"></span>
+					<h5>Team members</h5>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="home-blog">
+	<div class="container">
+		<!-- section title -->
+		<div class="row justify-content-center">
+			<div class="col-sm-8">
+				<div class="sectionTitle text-center">
+					<h2>News</h2>
+					<p></p>
+				</div>
+			</div>
+		</div>
+		<!-- section title ends -->
+		<div class="row">
+			{foreach $articles as $article}
+			{if $article->draft == 1}
+			<div  class="col-md-6">
+
+				<div  class="card card-style3">
+					<div class="card_img">
+						<a n:href=":Front:News:detail $article->id"><img class="img-full" data-original="{$basePath}/images/posts/title/{$article->title_img}" alt="Card image"></a>
+						<div>
+							<span></span>
+						</div>
+					</div>
+
+					<div  class="card-block posts_default">
+
+						<a n:href=":Front:News:detail $article->id"><h4 class="card-title">{$article->title}</h4></a>
+
+					</div>
+
+
+				</div>
+				<p style="color:#848484;" >{$article->description}</p>
+			</div>
+			{/if}
+			{/foreach}
+
+		</div>
+	</div>
+</section>
+
+
+<!--
+
+<section class="portfolio-area">
+	<div class="container">
+
+		<div class="row justify-content-center">
+			<div class="col-md-8">
+				<div class="sectionTitle text-center">
+					<h2>Výzkum</h2>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusm temp</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-6 col-lg-4">
+				<div class="card">
+					<div class="card_img">
+						<a href="project-style-1.html">
+							<img class="img-full" data-original="{$basePath}/frontend/img/home/gallery/g1.jpg" />
+							<div class="hover-overlay effect-scale">
+								<div class="img_overlay-container">
+									<h4 class="img_overlay-title">Sales Organization</h4>
+									<p class="img_overlay-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod </p>
+									<div class="img_overlay-icon">
+										<a href="{$basePath}/frontend/img/projetcs/p1.jpg"  class="icon link quick_view" data-fancybox="quick-view1" data-qw-form="qw-form-1"><i class="fa fa-search"></i></a>
+										<a href="project-style-1.html" class="icon link"><i class="fa fa-link"></i></a>
+										<span class="hidden">
+											<a class="quick_view" data-fancybox="quick-view1" href="{$basePath}/frontend/img/projetcs/p1.jpg">#2</a>
+										</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div id="qw-form-1" class="hidden">
+						<div class="bg-image" style="background-image: url('img/projetcs/bg-projects.jpg');">
+							<div class="project_specification">
+								<h2 class="text-primary">Project Details</h2>
+								<div class="row">
+									<div class="col-4 ">Clients:</div>
+									<div class="col-8 ">Jake Hemswire</div>
+								</div>
+								<div class="row">
+									<div class="col-4 ">Category:</div>
+									<div class="col-8 ">Investment,Consulting</div>
+								</div>
+								<div class="row">
+									<div class="col-4 ">Date:</div>
+									<div class="col-8 ">20 June, 2017</div>
+								</div>
+								<div class="row">
+									<div class="col-4 ">Status:</div>
+									<div class="col-8 ">In Progress</div>
+								</div>
+								<div class="row">
+									<div class="col-4 ">Website: </div>
+									<div class="col-8  text-primary">www.info@example.com</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 col-lg-4">
+				<div class="card">
+					<div class="card_img">
+						<a href="project-style-2.html">
+							<img class="img-full" data-original="{$basePath}/frontend/img/home/gallery/g2.jpg" />
+							<div class="hover-overlay effect-scale">
+								<div class="img_overlay-container">
+									<h4 class="img_overlay-title">Sales Organization</h4>
+									<p class="img_overlay-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod </p>
+									<div class="img_overlay-icon">
+										<a href="{$basePath}/frontend/img/home/gallery/g2.jpg"  class="icon link quick_view" data-fancybox="quick-view2" data-qw-form="qw-form-2"><i class="fa fa-search"></i></a>
+										<a href="project-style-2.html" class="icon link"><i class="fa fa-link"></i></a>
+										<span class="hidden">
+											<a class="quick_view" data-fancybox="quick-view2" href="{$basePath}/frontend/img/home/gallery/g2.jpg">#2</a>
+										</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div id="qw-form-2" class="hidden">
+						<div class="bg-image" style="background-image: url('img/projetcs/bg-projects.jpg');">
+							<div class="project_specification">
+								<h2 class="text-primary">Project Details 2</h2>
+								<div class="row">
+									<div class="col-4 ">Clients:</div>
+									<div class="col-8 ">Jake Hemswire</div>
+								</div>
+								<div class="row">
+									<div class="col-4 ">Category:</div>
+									<div class="col-8 ">Investment,Consulting</div>
+								</div>
+								<div class="row">
+									<div class="col-4 ">Date:</div>
+									<div class="col-8 ">20 June, 2017</div>
+								</div>
+								<div class="row">
+									<div class="col-4 ">Status:</div>
+									<div class="col-8 ">In Progress</div>
+								</div>
+								<div class="row">
+									<div class="col-4 ">Website: </div>
+									<div class="col-8  text-primary">www.info@example.com</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 col-lg-4">
+				<div class="card">
+					<div class="card_img">
+						<a href="project-style-3.html">
+							<img class="img-full" data-original="{$basePath}/frontend/img/home/gallery/g3.jpg" />
+							<div class="hover-overlay effect-scale">
+								<div class="img_overlay-container">
+									<h4 class="img_overlay-title">Sales Organization</h4>
+									<p class="img_overlay-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod </p>
+									<div class="img_overlay-icon">
+										<a href="{$basePath}/frontend/img/home/gallery/g3.jpg"  class="icon link quick_view" data-fancybox="quick-view3" data-qw-form="qw-form-3"><i class="fa fa-search"></i></a>
+										<a href="project-style-3.html" class="icon link"><i class="fa fa-link"></i></a>
+										<span class="hidden">
+											<a class="quick_view" data-fancybox="quick-view3" href="{$basePath}/frontend/img/home/gallery/g3.jpg">#2</a>
+										</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div id="qw-form-3" class="hidden">
+						<div class="bg-image" style="background-image: url('img/projetcs/bg-projects.jpg');">
+							<div class="project_specification">
+								<h2 class="text-primary">Project Details</h2>
+								<div class="row">
+									<div class="col-4 ">Clients:</div>
+									<div class="col-8 ">Jake Hemswire</div>
+								</div>
+								<div class="row">
+									<div class="col-4 ">Category:</div>
+									<div class="col-8 ">Investment,Consulting</div>
+								</div>
+								<div class="row">
+									<div class="col-4 ">Date:</div>
+									<div class="col-8 ">20 June, 2017</div>
+								</div>
+								<div class="row">
+									<div class="col-4 ">Status:</div>
+									<div class="col-8 ">In Progress</div>
+								</div>
+								<div class="row">
+									<div class="col-4 ">Website: </div>
+									<div class="col-8  text-primary">www.info@example.com</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 col-lg-4">
+				<div class="card">
+					<div class="card_img">
+						<a href="project-style-1.html">
+							<img class="img-full" data-original="{$basePath}/frontend/img/home/gallery/g4.jpg" />
+							<div class="hover-overlay effect-scale">
+								<div class="img_overlay-container">
+									<h4 class="img_overlay-title">Sales Organization</h4>
+									<p class="img_overlay-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod </p>
+									<div class="img_overlay-icon">
+										<a href="{$basePath}/frontend/img/home/gallery/g4.jpg"  class="icon link quick_view" data-fancybox="quick-view4" data-qw-form="qw-form-4"><i class="fa fa-search"></i></a>
+										<a href="project-style-1.html" class="icon link"><i class="fa fa-link"></i></a>
+										<span class="hidden">
+											<a class="quick_view" data-fancybox="quick-view4" href="{$basePath}/frontend/img/home/gallery/g4.jpg">#2</a>
+										</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div id="qw-form-4" class="hidden">
+						<div class="bg-image" style="background-image: url('img/projetcs/bg-projects.jpg');">
+							<div class="project_specification">
+								<h2 class="text-primary">Project Details</h2>
+								<div class="row">
+									<div class="col-4 ">Clients:</div>
+									<div class="col-8 ">Jake Hemswire</div>
+								</div>
+								<div class="row">
+									<div class="col-4 ">Category:</div>
+									<div class="col-8 ">Investment,Consulting</div>
+								</div>
+								<div class="row">
+									<div class="col-4 ">Date:</div>
+									<div class="col-8 ">20 June, 2017</div>
+								</div>
+								<div class="row">
+									<div class="col-4 ">Status:</div>
+									<div class="col-8 ">In Progress</div>
+								</div>
+								<div class="row">
+									<div class="col-4 ">Website: </div>
+									<div class="col-8  text-primary">www.info@example.com</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 col-lg-4">
+				<div class="card">
+					<div class="card_img">
+						<a href="project-style-2.html">
+							<img class="img-full" data-original="{$basePath}/frontend/img/home/gallery/g5.jpg" />
+							<div class="hover-overlay effect-scale">
+								<div class="img_overlay-container">
+									<h4 class="img_overlay-title">Sales Organization</h4>
+									<p class="img_overlay-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod </p>
+									<div class="img_overlay-icon">
+										<a href="{$basePath}/frontend/img/blog/p4.jpg"  class="icon link quick_view" data-fancybox="quick-view5" data-qw-form="qw-form-5"><i class="fa fa-search"></i></a>
+										<a href="project-style-2.html" class="icon link"><i class="fa fa-link"></i></a>
+										<span class="hidden">
+											<a class="quick_view" data-fancybox="quick-view5" href="{$basePath}/frontend/img/blog/p4.jpg">#2</a>
+										</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div id="qw-form-5" class="hidden">
+						<div class="bg-image" style="background-image: url('img/projetcs/bg-projects.jpg');">
+							<div class="project_specification">
+								<h2 class="text-primary">Project Details</h2>
+								<div class="row">
+									<div class="col-4 ">Clients:</div>
+									<div class="col-8 ">Jake Hemswire</div>
+								</div>
+								<div class="row">
+									<div class="col-4 ">Category:</div>
+									<div class="col-8 ">Investment,Consulting</div>
+								</div>
+								<div class="row">
+									<div class="col-4 ">Date:</div>
+									<div class="col-8 ">20 June, 2017</div>
+								</div>
+								<div class="row">
+									<div class="col-4 ">Status:</div>
+									<div class="col-8 ">In Progress</div>
+								</div>
+								<div class="row">
+									<div class="col-4 ">Website: </div>
+									<div class="col-8  text-primary">www.info@example.com</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 col-lg-4">
+				<div class="card">
+					<div class="card_img">
+						<a href="project-style-3.html">
+							<img class="img-full" data-original="{$basePath}/frontend/img/home/gallery/g6.jpg" />
+							<div class="hover-overlay effect-scale">
+								<div class="img_overlay-container">
+									<h4 class="img_overlay-title">Sales Organization</h4>
+									<p class="img_overlay-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod </p>
+									<div class="img_overlay-icon">
+										<a href="{$basePath}/frontend/img/home/gallery/g6.jpg"  class="icon link quick_view" data-fancybox="quick-view6" data-qw-form="qw-form-6"><i class="fa fa-search"></i></a>
+										<a href="project-style-3.html" class="icon link"><i class="fa fa-link"></i></a>
+										<span class="hidden">
+											<a class="quick_view" data-fancybox="quick-view6" href="{$basePath}/frontend/img/home/gallery/g6.jpg">#2</a>
+										</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div id="qw-form-6" class="hidden">
+						<div class="bg-image" style="background-image: url('img/projetcs/bg-projects.jpg');">
+							<div class="project_specification">
+								<h2 class="text-primary">Project Details</h2>
+								<div class="row">
+									<div class="col-4 ">Clients:</div>
+									<div class="col-8 ">Jake Hemswire</div>
+								</div>
+								<div class="row">
+									<div class="col-4 ">Category:</div>
+									<div class="col-8 ">Investment,Consulting</div>
+								</div>
+								<div class="row">
+									<div class="col-4 ">Date:</div>
+									<div class="col-8 ">20 June, 2017</div>
+								</div>
+								<div class="row">
+									<div class="col-4 ">Status:</div>
+									<div class="col-8 ">In Progress</div>
+								</div>
+								<div class="row">
+									<div class="col-4 ">Website: </div>
+									<div class="col-8  text-primary">www.info@example.com</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="btn-container">
+			<a href="portfolio-4-column-fullwidth.html" class="btn btn-default bg-navy bold">View More</a>
+		</div>
+	</div>
+</section>
+-->
+
+<hr>
+<!-- OUR TEAM -->
+<section class="home-team">
+	<div class="container">
+		<!-- section title -->
+		<div class="row justify-content-center">
+			<div class="col-md-8">
+				<div class="sectionTitle text-center">
+					<h2>Team</h2>
+					<p></p>
+				</div>
+			</div>
+		</div>
+		<!-- section title ends -->
+
+
+		<div  class="row">
+			{foreach $team as $profile}
+			<div style ="margin:auto;" class="col-md-6 col-lg-3">
+				<div class="card card-style2 team-card">
+					<div class="card_img">
+						<img class="img-full" data-original="{$basePath}/images/profile/avatars/{$profile->avatar}" alt="Card image" style="height:235.5px;">
+
+					</div>
+					<div class="card-block">
+						<a n:href =":Front:Team:profile, $profile->id"><h4 class="card-title">{$profile->firstName} {$profile->lastName}</h4></a>
+						<span class="">{$profile->job_title}</span>
+					</div>
+				</div>
+			</div>
+			{/foreach}
+		</div>
+
+
+	</div>
+</section>
+
+<!-- BRANDS
+<div class="brand_carousel bg-navy">
+	<div class="container">
+		<div class="slick_brands">
+			<div class="brand_single">
+				<div class="brand_img">
+					<img src="{$basePath}/frontend/img/home/about/b1.png" alt="brands">
+				</div>
+			</div>
+			<div class="brand_single">
+				<div class="brand_img">
+					<img src="{$basePath}/frontend/img/home/about/b2.png" alt="brands">
+				</div>
+			</div>
+			<div class="brand_single">
+				<div class="brand_img">
+					<img src="{$basePath}/frontend/img/home/about/b3.png" alt="brands">
+				</div>
+			</div>
+			<div class="brand_single">
+				<div class="brand_img">
+					<img src="{$basePath}/frontend/img/home/about/b4.png" alt="brands">
+				</div>
+			</div>
+			<div class="brand_single">
+				<div class="brand_img">
+					<img src="{$basePath}/frontend/img/home/about/b1.png" alt="brands">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+-->

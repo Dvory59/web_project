@@ -1,0 +1,58 @@
+{block head}
+
+	<script src="{$basePath}/bower_components/lightbox2/dist/js/lightbox-plus-jquery.js" rel="stylesheet"></script>
+	<link rel="stylesheet" href="{$basePath}/bower_components/lightbox2/dist/css/lightbox.css">
+
+
+{/block}
+{block content}
+
+	<form enctype="multipart/form-data" n:name=postForm>
+
+
+		<label>Titulek</label>
+		<input n:name=title type="text" class="form-control" placeholder="Title">
+
+		<label>Description</label>
+		<textarea n:name=description class="form-control">
+	</textarea>
+
+		<label n:name=text>Obsah</label>
+		<textarea n:name=text id="editor1">
+	</textarea>
+		<div style="padding-top:1%;">
+		<input type="checkbox" style="left:1%; position:relative;" n:name=draft>
+		<p class="checkbox-inline" style="">PUBLISHED</p>
+		</div>
+			<div class="row" style=" padding-top:2%;">
+				<div class="cold-md-9" style="position: relative;">
+					<input n:name=title_img />
+					<button n:name=send class="btn btn-default">Submit</button>
+				</div>
+					{if $img != NULL}
+
+							<div class="col-md-3" style="float:right; position:relative;">
+								<a href="{$basePath}/www/images/posts/title/{$img}" data-lightbox="image-1"
+								   data-title="Title Img">
+									Show title image
+								</a>
+
+
+								<button n:name=img_delete class="btn btn-default">Delete image</button>
+							</div>
+						</div>
+					{else}
+						<p>Title img is missing</p>
+					{/if}
+
+
+	</form>
+
+
+	<script src="{$basePath}/bower_components/lightbox2/dist/js/lightbox.js"></script>
+{/block}
+
+{block footer}
+
+{/block}
+
