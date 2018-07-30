@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]>
+<html class="lt-ie9 lt-ie8 lt-ie7" lang="en">
+<![endif]-->
+
+<!--[if IE 7]>
+<html class="lt-ie9 lt-ie8" lang="en">
+<![endif]-->
+
+<!--[if IE 8]>
+<html class="lt-ie9" lang="en">
+<![endif]-->
+
+<!--[if gt IE 8]>
+  <!-->
+<html lang="en">
+<!--
+<![endif]-->
+
+<head>
+	<script>
+        $.nette.init();
+	</script>
+
+	<!-- UBLABOO SCRIPTS START-->
+	<link rel="stylesheet" type="text/css" href="{$basePath}/bower_components/bootstrap/dist/css/bootstrap.css">
+
+	<!-- Use this css for that pretty checkboxes (https://github.com/paveljanda/happy) -->
+	<link rel="stylesheet" type="text/css" href="{$basePath}/bower_components/happy/dist/happy.css">
+	<link rel="stylesheet" type="text/css"
+		  href="{$basePath}/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css">
+	<link rel="stylesheet" type="text/css"
+		  href="{$basePath}/bower_components/ublaboo-datagrid/assets/dist/datagrid.css">
+
+	<!-- Use this css for ajax spinners -->
+	<link rel="stylesheet" type="text/css"
+		  href="{$basePath}/bower_components/ublaboo-datagrid/assets/dist/datagrid-spinners.css">
+
+	<!-- Include this css when using FilterMultiSelect (silviomoreto.github.io/bootstrap-select) -->
+	<link rel="stylesheet" type="text/css"
+		  href="{$basePath}/bower_components/bootstrap-select/dist/css/bootstrap-select.css">
+	<!-- UBLABOO SCRIPT ENDS-->
+
+	<meta charset="utf-8">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Admin</title>
+	<meta name="author" content="Srinu">
+	<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport">
+	<meta name="description" content="Slick Admin Admin UI">
+	<meta name="keywords" content="Slick Admin, Admin UI, Admin Dashboard, Dashboard, Bootstrap3, Scss, Html5, CSS3">
+	<script src="{$basePath}/admin/js/html5-trunk.js"></script>
+	<link href="{$basePath}/admin/icomoon/style.css" rel="stylesheet">
+
+	<!--[if lte IE 7]>
+	<script src="{$basePath}/admin/css/icomoon-font/lte-ie7.js"></script>
+	<![endif]-->
+
+	<!-- bootstrap css -->
+	<link href="{$basePath}/admin/css/bootstrap.css" rel="stylesheet">
+
+	<!-- custom css -->
+	<link href="{$basePath}/admin/css/main.css" rel="stylesheet">
+
+	<!-- font awesome-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="{$basePath}/font-awesome-4.7.0/css/font-awesome.min.css">
+
+
+	{include head}
+
+</head>
+
+<body>
+
+<!-- Header start -->
+<header>
+
+	<!-- Logo start -->
+	<div class="logo">
+		<span>Admin</span>
+	</div>
+	<!-- Logo end -->
+	<!-- Optional Dropdown start -->
+	<!--
+	<div id="optional-dropdown">
+
+		<ul>
+			<li>
+				<a href="{$basePath}/index.html">
+					<span class="fs1" aria-hidden="true" data-icon="&#xe000;"></span>
+				</a>
+			</li>
+			<li class="hidden-lg hidden-md">
+				<a href="{$basePath}/index.html">
+					<span class="fs1" aria-hidden="true" data-icon="&#xe0a2;"></span>
+					<span class="count-label"></span>
+				</a>
+				<ul>
+					<li>
+						<a href="index.html">
+							Dashboard
+						</a>
+					</li>
+					<li>
+						<a href="ui-elements.html">
+							UI Elements
+						</a>
+					</li>
+					<li>
+						<a href="forms.html">
+							Forms
+						</a>
+					</li>
+					<li>
+						<a href="charts.html">
+							Charts
+						</a>
+					</li>
+					<li>
+						<a href="tables.html">
+							Tables
+						</a>
+					</li>
+					<li>
+						<a href="gallery.html">
+							Gallery
+						</a>
+					</li>
+					<li>
+						<a href="login.html">
+							Login
+						</a>
+					</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="invoice.html">
+					<span class="fs1" aria-hidden="true" data-icon="&#xe099;"></span>
+					<span class="count-label"></span>
+				</a>
+				<ul>
+					<li>
+						<a href="invoice.html"><span class="fs1" aria-hidden="true" data-icon="&#xe004;"></span> Invoice</a>
+					</li>
+					<li>
+						<a href="maps.html"><span class="fs1" aria-hidden="true" data-icon="&#xe042;"></span> Maps</a>
+					</li>
+					<li>
+						<a href="profile.html"><span class="fs1" aria-hidden="true" data-icon="&#xe074;"></span> Profile</a>
+					</li>
+					<li>
+						<a href="typography.html"> <span class="fs1" aria-hidden="true" data-icon="&#xe141;"></span>
+							Typography</a>
+					</li>
+					<li>
+						<a href="calendar.html"><span class="fs1" aria-hidden="true" data-icon="&#xe052;"></span>
+							Calendar</a>
+					</li>
+					<li>
+						<a href="mail.html"><span class="fs1" aria-hidden="true" data-icon="&#xe004;"></span>
+							Messages</a>
+					</li>
+					<li>
+						<a href="icons.html"><span class="fs1" aria-hidden="true" data-icon="&#xe0a9;"></span> Icons</a>
+					</li>
+					<li>
+						<a href="grid.html"><span class="fs1" aria-hidden="true" data-icon="&#xe14c;"></span> Grid</a>
+					</li>
+					<li>
+						<a href="error.html"><span class="fs1" aria-hidden="true" data-icon="&#xe0f4;"></span> 404</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="mail.html">
+					<span class="fs1" aria-hidden="true" data-icon="&#xe040;"></span>
+					<span class="count-label"></span>
+				</a>
+			</li>
+		</ul>
+
+	</div>
+-->
+	<!-- Optional Dropdown end -->
+
+
+	<!-- Search bar end -->
+
+	<!-- Odkaz na default Adminu a výpis přihlášeného uživatele -->
+	<div id="mini-nav">
+		<ul>
+			<li>
+				<a n:href=":Front:Default:default">
+					<span class="fs1" aria-hidden="true" data-icon="&#xe000;"></span>
+
+				</a>
+
+			</li>
+
+			<li>
+
+				<p style ="display: block;padding: 13px 15px;color: #999999;font-size: 13px;text-align: left;"n:if="$user != NULL">{$user -> firstName} {$user -> lastName}</p>
+
+			</li>
+		</ul>
+	</div>
+
+
+</header>
+<!-- Header end -->
+
+<!-- Hlavní sekce-->
+<div class="main-container">
+
+	<!-- Levé menu start -->
+	<div class="sidebar hidden-xs">
+
+		<ul class="slick-menu">
+			<li n:class ="$presenter->isLinkCurrent(':Admin:Default:*') ? active">
+				<a n:href="Default:default">
+					{if $presenter->isLinkCurrent(':Admin:Default:*')}<div class="current-page"></div>{/if}
+					<span class="fs1" aria-hidden="true" ></span>
+					<strong>Home</strong>
+				</a>
+			</li>
+
+			<li n:class ="drop-menu, $presenter->isLinkCurrent(':Admin:About:*') ? active">
+				<a n:href="About:about 'about'">
+					{if $presenter->isLinkCurrent(':Admin:About:*')}<div class=""></div>{/if}
+					<span class="fs1" aria-hidden="true" ></span>
+					<strong>About</strong>
+				</a>
+				<ul>
+					<li><a n:href="About:about 'about'"><span class="fs1" aria-hidden="true" ></span>About</a>
+					</li>
+
+					<li><a n:href="About:about 'smart_city'"><span class="fs1" aria-hidden="true"
+																   ></span>Smart City</a>
+					</li>
+					<li><a n:href="About:about 'smart_grid'"><span class="fs1" aria-hidden="true"
+																   ></span>Smart Grid</a>
+					</li>
+					<li><a n:href="About:about 'industry'"><span class="fs1" aria-hidden="true"
+																></span>Industry</a>
+					</li>
+				</ul>
+			</li>
+			<li n:class ="drop-menu, $presenter->isLinkCurrent(':Admin:News:*') ? active">
+				<a n:href="News:list">
+					{if $presenter->isLinkCurrent(':Admin:News:*')}<div class="current-page"></div>{/if}
+					<span class="fs1" aria-hidden="true" ></span>
+					<strong>News</strong>
+				</a>
+				<ul>
+					<li><a n:href="News:list"><span class="fs1" aria-hidden="true" ></span>News list</a>
+					</li>
+					<li><a n:href="News:post"><span class="fs1" aria-hidden="true" ></span>New post</a>
+					</li>
+				</ul>
+			</li>
+
+			<li n:class ="drop-menu, $presenter->isLinkCurrent(':Admin:User:*') ? active">
+
+				<a n:href="User:list">
+					{if $presenter->isLinkCurrent(':Admin:User:*')}<div class="current-page"></div>{/if}
+					<span class="fs1" aria-hidden="true" ></span>
+
+					<strong>Users</strong>
+				</a>
+				<ul>
+					<li><a n:href="User:list"><span class="fs1" aria-hidden="true" ></span>User List</a>
+					</li>
+					<li><a n:href="User:register"><span class="fs1" aria-hidden="true" ></span>New User</a></li>
+
+				</ul>
+			</li>
+			<li n:class ="drop-menu, $presenter->isLinkCurrent(':Admin:Parse:*') ? active">
+				<a n:href="Parse:default">
+					{if $presenter->isLinkCurrent(':Admin:Parse:*')}<div class="current-page"></div>{/if}
+					<span class="fs1" aria-hidden="true" ></span>
+					<small style="margin-left:50px;position:absolute;">{$newProjectsCount}</small>
+					<br>
+					<strong>Research</strong>
+				</a>
+				<!--<ul>
+					<li><a n:href="Vut:default"><span class="fs1" aria-hidden="true" data-icon="&#xe096;">VUT</span></a>
+					</li>
+					<li><a n:href="Rvvi:default"><span class="fs1" aria-hidden="true"
+													   data-icon="&#xe096;">RVVI</span></a></li>
+					<li><a n:href="Scholar:default"><span class="fs1" aria-hidden="true"
+														  data-icon="&#xe096;">Scholar</span></a></li>
+
+				</ul>-->
+				</a>
+			</li>
+			<li>
+				<a n:href=":Admin:Sign:out">
+					<span class="fs1"  ></span>
+					<strong>Log out</strong>
+				</a>
+			</li>
+
+		</ul>
+	</div>
+	<!-- Sidebar end konec -->
+
+	<!-- Dashboard wrapper start -->
+	<div class="dashboard-wrapper">
+
+
+		<div class="alert alert-danger" n:foreach="$flashes as $flash"
+			 class="flash {$flash->type}">{$flash->message}</div>
+
+
+		<!-- generovaný obsah -->
+		{include content}
+
+
+	</div>
+	<!-- Dashboard wrapper end -->
+
+</div>
+<!-- Main Container end -->
+
+<!-- Scripts -->
+
+<script src="{$basePath}/admin/js/wysiwyg/wysihtml5-0.3.0.js"></script>
+
+<script src="{$basePath}/admin/js/jquery.min.js"></script>
+<script src="{$basePath}/admin/js/bootstrap.js"></script>
+<script src="{$basePath}/admin/js/jquery-ui-1.8.23.custom.min.js"></script>
+
+<!-- Flot charts -->
+<script src="{$basePath}/admin/js/flot/jquery.flot.js"></script>
+<script src="{$basePath}/admin/js/flot/jquery.flot.resize.min.js"></script>
+<script src="{$basePath}/admin/js/flot/jquery.flot.tooltip.js"></script>
+
+<!-- Easy pie charts -->
+<script src="{$basePath}/admin/js/jquery.easy-pie-chart.js"></script>
+
+<!-- Tiny Scrollbar JS -->
+<script src="{$basePath}/admin/js/tiny-scrollbar.js"></script>
+
+<!-- Sparkline JS -->
+<script src="{$basePath}/admin/js/jquery.sparkline.js"></script>
+
+<script src="{$basePath}/admin/js/rating/jquery.raty.js"></script>
+
+<!-- custom Js -->
+<script src="{$basePath}/admin/js/custom-index.js"></script>
+
+<script src="{$basePath}/admin/js/custom.js"></script>
+
+<!-- UBLABOO SCRIPTS START-->
+<script src="{$basePath}/bower_components/jquery/dist/jquery.js"></script>
+<script src="{$basePath}/bower_components/nette-forms/src/assets/netteForms.js"></script>
+<script src="{$basePath}/bower_components/nette.ajax.js/nette.ajax.js"></script>
+
+
+<script src="{$basePath}/bower_components/happy/dist/happy.js"></script>
+<script src="{$basePath}/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
+<script src="{$basePath}/bower_components/jquery-ui-sortable/jquery-ui-sortable.js"></script>
+<script src="{$basePath}/bower_components/ublaboo-datagrid/assets/dist/datagrid.js"></script>
+
+<!-- It is recommended to include this JS file with just a few bits. It refreshes URL on non ajax request -->
+<script src="{$basePath}/bower_components/ublaboo-datagrid/assets/dist/datagrid-instant-url-refresh.js"></script>
+
+<!-- Use this little extension for ajax spinners -->
+<script src="{$basePath}/bower_components/ublaboo-datagrid/assets/dist/datagrid-spinners.js"></script>
+
+<!-- Include bootstrap.js for proper behaviour of ColumnStatus -->
+<script src="{$basePath}/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+<!-- Include bootstrap-select.js when using FilterMultiSelect (silviomoreto.github.io/bootstrap-select) -->
+<script src="{$basePath}/bower_components/bootstrap-select/dist/js/bootstrap-select.js"></script>
+<!-- UBLABOO SCRIPT ENDS-->
+
+<!-- WYSIVIG EDITOR SCRIPT START -->
+<script src="{$basePath}/ckeditor/ckeditor.js"></script>
+
+<script n:syntax="off">
+
+    var roxyFileman = '/bakalarka_2/fileman/index.html';
+    $(function () {
+        CKEDITOR.replace('editor1', {
+            filebrowserBrowseUrl: roxyFileman,
+            filebrowserImageBrowseUrl: roxyFileman + '?type=image',
+            removeDialogTabs: 'link:upload;image:upload'
+        });
+    });
+</script>
+
+{include footer}
+
+</body>
+</html>

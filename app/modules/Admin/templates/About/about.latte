@@ -1,0 +1,21 @@
+{block head}{/block}
+{block footer}{/block}
+{block content}
+
+	<form enctype="multipart/form-data" n:name=postForm>
+		<label>Titulek</label>
+		<input n:name=title type="text" class="form-control" placeholder="Title">
+
+		<label>Description</label>
+		<textarea n:name=description class="form-control">
+	</textarea>
+
+		<label n:name=text>Obsah</label>
+		<textarea n:name=text id="editor1">
+	</textarea>
+
+
+		<button n:name=send  class="btn btn-default">Submit</button>
+	</form>
+
+{/block}

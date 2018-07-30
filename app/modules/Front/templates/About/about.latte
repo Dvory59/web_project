@@ -1,0 +1,89 @@
+{block head}
+<link rel="stylesheet" href="{$basePath}\frontend\css\about.css">
+{/block}
+{block footer}{/block}
+{block content}
+
+	<!-- BREDCRUMB -->
+
+			<h1>About us</h1>
+		</div>
+		<div class="">
+			<ul class="pager middle">
+				<li>Home</li>
+				<li><a href="javascript:void(0)">About us</a></li>
+			</ul>
+		</div>
+	</section>
+
+	<section class="about-details">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<img class="about-logo" src ="{$basePath}\images\sg_logo.png">
+					<h1 class="about-title">{$about->title}</h1>
+											{$about -> text|noescape}
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+
+	<!-- OUR SERVICES -->
+	<section class="services-area">
+		<div class="container">
+			<!-- section title -->
+			<div class="row justify-content-center">
+				<div class="col-md-8">
+					<div class="sectionTitle text-center">
+						<h2>Our subjects</h2>
+										</div>
+				</div>
+			</div>
+			<!-- section title ends -->
+			<div class="row">
+				<div class="col-md-6 col-lg-4">
+					<div class="media-box">
+						<div class="media-icon">
+							<i class="fa fa-line-chart"></i>
+						</div>
+						<div class="media-content">
+							<a n:href =":Front:About:subject 'smart_city'"><h4>{$sm_city->title}</h4></a>
+							{$sm_city->description}
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-4">
+					<div class="media-box">
+						<div class="media-icon">
+							<i class="fa fa-credit-card"></i>
+						</div>
+						<div class="media-content">
+							<a n:href =":Front:About:subject 'smart_grid'"><h4>{$sm_grid->title}</h4></a>
+							{$sm_grid->description}
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-4">
+					<div class="media-box">
+						<div class="media-icon">
+							<i class="fa fa-bar-chart-o"></i>
+						</div>
+						<div class="media-content">
+							<a n:href =":Front:About:subject 'industry'"><h4>{$industry->title}</h4></a>
+							{$industry->description}
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+
+
+
+
+
+{/block}

@@ -1,0 +1,89 @@
+{block head}
+	<script src="{$basePath}/bower_components/lightbox2/dist/js/lightbox-plus-jquery.js" rel="stylesheet"></script>
+	<link rel="stylesheet" href="{$basePath}/bower_components/lightbox2/dist/css/lightbox.css">
+<style>
+	.input_neco {
+		width:25em;
+	}
+</style>
+{/block}
+{block footer}{/block}
+{block content}
+
+<div class="container">
+	<div class="row">
+		<div class="">
+	<form n:name=editForm>
+		<div class="form-group col-sm-8">
+
+			<label >VUT ID</label>
+			<input n:name=vutID class="form-control input_neco"  placeholder="VUT ID">
+			<label >RVVI ID</label>
+			<input n:name=rvviID class="form-control input_neco"  placeholder="RVVI ID">
+			<label >First Name</label>
+			<input n:name=firstName class="form-control input_neco"  placeholder="First Name" >
+			<label >Last Name</label>
+			<input n:name=lastName class="form-control input_neco" placeholder="Last Name" >
+			<label>Email address</label>
+			<input n:name=email class="form-control input_neco"  placeholder="name@example.com" >
+			<label >Phone number</label>
+			<input n:name=phone_number class="form-control input_neco"  placeholder="+420 xxx xxx xxx" >
+			<label n:name=work_phone_number>Work phone number</label>
+			<input n:name=work_phone_number class="form-control input_neco"  placeholder="+420 xxx xxx xxx" >
+			<label >First titles (before name)</label>
+			<input n:name=first_title class="form-control input_neco" placeholder="xxx,xxx,..." >
+			<label >Second titles (after name)</label>
+			<input n:name=second_title class="form-control input_neco" placeholder="xxx,xxx,..." >
+			<label >Job title</label>
+			<input n:name=job_title class="form-control input_neco" placeholder="xxx,xxx,..." >
+			<label >Office</label>
+			<input n:name=office class="form-control input_neco" placeholder="xxx,xxx,..." >
+			<label >Address</label>
+			<textarea n:name=address class="form-control input_neco" placeholder="xxx,xxx,..." ></textarea>
+			<br><br>
+			<label >Profile Description</label>
+			<textarea n:name=description id="editor1"></textarea>
+			<br><br>
+			<label >Profile avatar</label>
+			<input n:name=avatar class="form-control-file">
+			<br><br>
+			<label>Parse option</label>
+			<select n:name=parse_option class="form-control" style="width:13em; height: 2.1em; ">
+			</select>
+			<br><br>
+			<button n:name=send class="btn btn-primary mb-2">Save</button>
+
+		</div>
+		<div class="form-group col-sm-4">
+			<label>Facebook</label>
+			<input n:name=facebook class="form-control input_neco" placeholder="Facebook">
+			<label>Twitter</label>
+			<input n:name=twitter class="form-control input_neco" placeholder="Twitter">
+			<label>LinkedIn</label>
+			<input n:name=linkedin class="form-control input_neco" placeholder="LinkedIn">
+			<label>Research Gate</label>
+			<input n:name=research_gate class="form-control input_neco" placeholder="Research Gate">
+
+		<br>
+			<br>
+			{if $img != NULL}
+			<a href="{$basePath}/www/images/profile/avatars/{$img}" data-lightbox="image-1"
+			   data-title="Title Img">
+				Show avatar image
+			</a>
+						<button n:name=img_delete class="btn btn-default">Delete image</button>
+			{else}
+				<p>Avatar is missing</p>
+			{/if}
+
+
+
+
+		</div>
+	</form>
+		</div>
+
+	</div>
+</div>
+	<script src="{$basePath}/bower_components/lightbox2/dist/js/lightbox.js"></script>
+{/block}

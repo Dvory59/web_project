@@ -1,0 +1,38 @@
+{block head}
+	<link rel="stylesheet" href="admin/css/default.css">
+{/block}
+{block content}
+	<div class="container">
+		<div class="row">
+			<div class="default-main-contact col-md-4">
+				<h4>Main contact form</h4>
+				<form n:name = mainContact>
+					<label>Email address</label>
+					<input n:name=email class="form-control input_neco" placeholder="name@example.com">
+					<label>Main phone number</label>
+					<input n:name=phone_number class="form-control input_neco" placeholder="+420 xxx xxx xxx">
+					<label>Second phone number</label>
+					<input n:name=work_phone_number class="form-control input_neco" placeholder="+420 xxx xxx xxx">
+					<label>Address</label>
+					<textarea n:name=address class="form-control input_neco" placeholder="xxx,xxx,..."></textarea>
+					<label>Facebook</label>
+					<input n:name=facebook class="form-control input_neco" placeholder="Facebook">
+					<label>Twitter</label>
+					<input n:name=twitter class="form-control input_neco" placeholder="Twitter">
+					<label>LinkedIn</label>
+					<input n:name=linkedin class="form-control input_neco" placeholder="LinkedIn">
+					<label>Research Gate</label>
+					<input n:name=research_gate class="form-control input_neco" placeholder="Research Gate">
+					<button n:name=send class="btn btn-primary mb-2">Save</button>
+				</form>
+			</div>
+			<div class="col-md-4"></div>
+
+			<div class="col-md-4"></div>
+
+		</div>
+	</div>
+
+
+{/block}
+{block footer}{/block}

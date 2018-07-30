@@ -1,0 +1,56 @@
+
+{block content}
+	{block head}
+
+		{/block}
+	{block footer}{/block}
+
+	<h1>News</h1>
+	</div>
+	<div class="">
+		<ul class="pager middle">
+			<li>Home</li>
+			<li><a href="javascript:void(0)">News</a></li>
+		</ul>
+	</div>
+	</section>
+
+<section  class="blog-grid">
+	<div  class="container">
+		<div class="row">
+			<div class="col-lg-8">
+				<!-- blog single column starts -->
+				<div  class="row" >
+					<div  class="col-md-12">
+						<div style="margin:auto;" class="card card-style3">
+							<div class="card_img">
+								<img class="img-full" src="{$basePath}/images/posts/title/{$article->title_img}" alt="blog image">
+								<div class="bg-primary">
+									<span></span>
+
+								</div>
+							</div>
+							<div class="card-block">
+
+								<h2>{$article->title}</h2>
+								<br>
+								<p style="color:#848484; line-height: 20px;">{$article->description|noescape}</p>
+								<hr>
+								<p style="color:black;">
+									{$article->text|noescape}
+								</p>
+
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+			{include "sideBars.latte"}
+	</div>
+</section>
+{/block}

@@ -1,0 +1,23 @@
+{block head}
+<style>
+.aktual-odkaz{
+	font-weight: bold;
+	padding:10px;
+}
+
+</style>{/block}
+{block footer}{/block}
+{block content}
+
+
+	<a class="aktual-odkaz" n:href="Parse:parseVUT">Aktualizovat VUT</a>
+
+	<a class="aktual-odkaz"  n:href="Parse:parseRVVIVysledky">Aktualizovat RVVI (vysledky)</a>
+	<a class="aktual-odkaz"  n:href="Parse:parseRVVIProject">Aktualizovat RVVI (projekty)</a>
+
+
+	{control vutGrid}
+
+
+
+{/block}

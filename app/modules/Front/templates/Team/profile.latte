@@ -1,0 +1,151 @@
+{block head}
+	<link rel="stylesheet" href="{$basePath}\frontend\css\profile.css">
+{/block}
+
+
+
+{block content}
+
+			<h1>Member</h1>
+		</div>
+		<div class="">
+			<ul class="pager middle">
+				<li>Home</li>
+				<li><a href="javascript:void(0)">Member</a></li>
+			</ul>
+		</div>
+	</section>
+
+	<!-- OUR TEAM -->
+	<section class="member-details">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-4">
+					<div class="img-container">
+						{if $profile->avatar}
+							<img class="img-full" src="{$basePath}/images/profile/avatars/{$profile->avatar}"
+								 alt="Card image">
+						{else}
+							<img class="img-full" src="{$basePath}/images/profile/avatars/default.png" alt="Card image">
+						{/if}                                        </div>
+				</div>
+				<div class="col-lg-9 col-md-8">
+					<div class="member_designation">
+						<p n:if="$profile->first_title">{$profile->first_title}</p>
+						<h2>{$profile->firstName} {$profile->lastName}</h2>
+						<p n:if="$profile->second_title">{$profile->second_title}</p>
+						<span n:if="$profile->job_title">{$profile->job_title}</span>
+					</div>
+					<div class="member_desc">
+
+						{$profile->description|noescape}
+
+					</div>
+					<div class="bg-image " style="background-image: url('img/projetcs/bg-projects2.jpg');">
+						<div class="member_contact">
+							<div class="row">
+								<div class="col-lg-4">
+									<div class="media-box">
+										<div class="media-icon">
+											<i class="fa fa-tablet" aria-hidden="true"></i>
+										</div>
+										<div class="media-content">
+											<h5>Phone</h5>
+											<p><a>{$profile->work_phone_number}</a></p>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4">
+									<div class="media-box">
+										<div class="media-icon">
+											<i class="fa fa-envelope-o" aria-hidden="true"></i>
+										</div>
+										<div class="media-content">
+											<h5>Email</h5>
+											<p><a>{$profile->email}</a></p>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4">
+									<div class="social-icons">
+
+										<a style="background: url('{$baseUrl}/frontend/img/vut.png') no-repeat center; background-size: 50%;"
+										   class="btn btn-social outlined"
+										   href="https://www.vutbr.cz/lide/{$profile->vutID}"><i class="fa"></i></a>
+										<a n:if="$profile->twitter != NULL" href="https://{$profile->twitter}" class="btn btn-social outlined"><i class="fa fa-twitter"></i></a>
+										<a n:if="$profile->linkedin != NULL" href="https://{$profile->linkedin}" class="btn btn-social outlined"><i class="fa fa-linkedin"></i></a>
+										<a n:if="$profile->facebook != NULL" href="https://{$profile->facebook}" class="btn btn-social outlined"><i class="fa fa-facebook-f"></i></a>
+										<a n:if="$profile->research_gate != NULL" href="https://{$profile->research_gate}" class="btn btn-social outlined"><i class="fab fa-researchgate"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="container">
+						<div class="row">
+							<div class="col-md-3">
+								<h5><a n:href=":Front:Research:userSearch $profile->firstName,$profile->lastName">Show member projects</a></h5>
+							</div>
+
+
+						</div>
+<!--
+						<div class="profile-detail-block">
+							<div class="row">
+								<div class="col-lg-4 member_desc">
+									<h4>H-Index</h4>
+									<table>
+										<thead>
+										<th>Website</th>
+										<th>Index count</th>
+										</thead>
+										<tbody>
+										<tr>
+											<td><strong>Scopus</strong></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td><strong>Google Scholar</strong></td>
+											<td></td>
+										</tr>
+										</tbody>
+
+									</table>
+
+								</div>
+								<div class="col-lg-4 member_desc">
+									<h4>Aesent nec nisl</h4>
+									<p>
+										Cepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+										deserunt
+										mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus
+										error
+										sit
+										voluptatem accusantium
+									</p>
+								</div>
+								<div class="col-lg-4 member_desc">
+									<h4>Aesent nec nisl</h4>
+									<p>
+										Cepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+										deserunt
+										mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus
+										error
+										sit
+										voluptatem accusantium
+									</p>
+								</div>
+							</div>
+						</div>
+-->
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+{/block}
+{block footer}
+	<script src="{$basePath}\frontend\js\profile.js"></script>
+{/block}

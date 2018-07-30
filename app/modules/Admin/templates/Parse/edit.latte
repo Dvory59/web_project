@@ -1,0 +1,35 @@
+{block head}{/block}
+{block footer}{/block}
+{block content}
+
+	<form enctype="multipart/form-data" n:name=projectForm>
+
+		<!--<label>Name CZ</label>
+		<input n:name=name_cz type="text" class="form-control" placeholder="Name CZ">
+		-->
+		<label>Name EN</label>
+		<input n:name=name_en type="text" class="form-control" placeholder="Name EN">
+
+		<label>Authors</label>
+		<input n:name=authors type="text" class="form-control" placeholder="Authors">
+
+		<label>Detail URL</label>
+		<input n:name=detail_url type="text" class="form-control" placeholder="Detail URL">
+
+		<label>Source</label>
+		<input n:name=source type="text" class="form-control" placeholder="Source">
+
+		<label>End year</label>
+		<input n:name=year_end type="text" class="form-control" placeholder="End Year">
+
+		<label>Abstract</label>
+		<textarea n:name=description_original class="form-control"></textarea>
+
+
+		<label n:name=text>Text</label>
+		<textarea n:name=text id="editor1">	</textarea>
+
+		<button n:name=send  class="btn btn-default">Save</button>
+	</form>
+
+{/block}

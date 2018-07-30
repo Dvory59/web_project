@@ -1,0 +1,47 @@
+{block head}{/block}
+{block footer}{/block}
+{block content}
+
+			<h1>Team</h1>
+		</div>
+		<div class="">
+			<ul class="pager middle">
+				<li>Home</li>
+				<li><a href="javascript:void(0)">Team</a></li>
+			</ul>
+		</div>
+	</section>
+
+	<section class="home-team">
+		<div class="container">
+			<!-- section title -->
+			<div class="row justify-content-center">
+				<div class="col-md-8">
+					<div class="sectionTitle text-center">
+						<h2>Our Team</h2>
+						<p></p>
+					</div>
+				</div>
+			</div>
+			<!-- section title ends -->
+			<div class="row">
+				<div class="col-md-6 col-lg-3" n:foreach="$users as $item">
+					<div class="card card-style2 team-card">
+						<div class="card_img">
+							{if $item->avatar}
+							<img  class="img-full" src="{$basePath}/images/profile/avatars/{$item->avatar}" alt="Card image" style="height:235.5px;">
+								{else}
+								<img  class="img-full" src="{$basePath}/images/profile/avatars/default.png" alt="Card image">
+								{/if}
+
+						</div>
+						<div class="card-block">
+							<a n:href=":Front:Team:profile, $item->id"><h4 class="card-title">{$item->firstName} {$item->lastName}</h4></a>
+							<span class="">{$item->job_title}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{/block}
